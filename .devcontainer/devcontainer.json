@@ -1,0 +1,22 @@
+{
+  "name": "django-dev",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "web",
+  "workspaceFolder": "/app",
+  "overrideCommand": false,
+  "portsAttributes": {},
+  "forwardPorts": [],
+  "postCreateCommand": "python manage.py migrate",
+	"customizations": {
+		"vscode": {
+            "settings": {
+                "remote.autoForwardPorts": false
+            },
+			"extensions": [
+				"ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-azuretools.vscode-docker"
+			]
+		}
+	}
+}
