@@ -9,6 +9,7 @@ class OdooEnvironment(EnvironmentMixin):
     is_enterprise = models.BooleanField(default=False)
     python_version = models.CharField(max_length=10)
     url = models.URLField(blank=True, null=True)
+    systemd_service_name = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return f"{self.environment.name} - {self.environment.mode.name} ({self.version})"

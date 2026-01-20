@@ -12,6 +12,8 @@ class Environment(models.Model):
     server = models.ForeignKey(to='servers.Server', on_delete=models.CASCADE, related_name='environments')
     mode = models.ForeignKey(to=EnvironmentMode, on_delete=models.CASCADE, related_name='environments')
     type = models.CharField(max_length=100)
+    project = models.ForeignKey(to='environments.Project', on_delete=models.CASCADE, related_name='environments', null=True, blank=True)
+    systemd_service_name = models.CharField(max_length=100, blank=True, null=True)
     
     def __str__(self):
         return self.name

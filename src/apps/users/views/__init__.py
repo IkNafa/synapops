@@ -1,1 +1,1 @@
-from .github import GitHubConnectionAPIView, GitHubInstallationCallbackAPIView, GitHubWebhookAPIView
+from .github import github_connect, github_installation_callback, github_webhook

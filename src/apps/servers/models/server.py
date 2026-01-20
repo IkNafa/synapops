@@ -8,6 +8,9 @@ class Server(models.Model):
 
     organization = models.ForeignKey(to='users.Organization', on_delete=models.CASCADE, related_name='servers')
 
+    agent_url = models.URLField(blank=True, null=True)
+    agent_token = models.CharField(max_length=255, blank=True, null=True)
+
     # TODO: VPN details
 
     # TODO: Operating System details (Model???)

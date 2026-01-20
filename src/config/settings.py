@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_cleanup.apps.CleanupConfig',
     'rest_framework',
+    'drf_spectacular',
     'apps.base',
+    'apps.docs',
     'apps.users',
     'apps.servers',
     'apps.environments',
@@ -74,6 +76,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Servidores y Entornos API",
+    "DESCRIPTION": "API para la gestión de servidores y entornos",
+    "VERSION": "1.0.0",
+}
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
